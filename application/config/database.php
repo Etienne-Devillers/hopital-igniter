@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
+	'dsn'	=> 'mysql:host=localhost;dbname=hospitale2n;charset=utf8',
 	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'username' => 'hospitalAdmin',
+	'password' => '_!CY1P-yR_q)1eg]',
+	'database' => 'hospitale2n',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

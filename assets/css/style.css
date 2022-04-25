@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+body{
+    background: rgb(255,255,255);
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+
+}
+main{
+    min-height: calc(100vh - 120px);
+}
+
+/********************************************** HEADER/FOOTER **********************************************/
+header {
+height: 90px;
+background-color: rgb(139, 227, 215);
+}
+
+footer{
+    background-color: rgb(139, 227, 215);
+    text-align: center;
+    height: 30px;
+}
+
+.leftSideHeader{
+border-right: solid 1px rgba(128, 128, 128, 0.489);
+background-color:  rgb(174, 235, 228);
+width: 200px;
+height: 100%;
+}
+
+.leftSideHeader img {
+    object-fit: contain;
+    width: 90%;
+    margin-left: 5% ;
+    padding: 5px 0;
+}
+
+/********************************************** NAVBAR **********************************************/
+
+.navItem{
+    width: 290px;
+    height: 70px;
+    background-color: rgb(93, 222, 70);
+    margin: 5px 0;
+    border-radius: 0 25px 25px 0;
+    position: absolute;
+    left: -230px;
+    transition: 0.7s;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: black;
+    font-size: 30px;
+    
+}
+
+.navItm1 {
+top: 100px;
+}
+.navItm2 {
+    top: 180px;
+}
+.navItm3 {
+    top: 260px;
+}
+.navItm4 {
+    top: 340px;
+}
+
+.navItem:hover{
+    left: 0;
+}
+
+.svgImg{
+    width: 40px;
+    margin-right: 12px;
+    margin-left: 20px;
+}
+
+/********************************************** Main **********************************************/
+
+.mainTitle {
+    margin-top: 0;
+    text-align: center;
+    font-size: 48px;
+}
+
+.disclaimer{
+    font-size: 32px;
+    text-align: center;
+}
+
+#mainSection{
+width: 80vw;
+border-color:  rgba(128, 128, 128, 0.466);
+border-style: solid;
+border-width: 0 1px 0 1px;
+margin: auto;
+min-height: calc(100vh - 120px);
+background-color: white;
+}
+
+#contentSection {
+    width: 95%;
+padding-top: 25px;
+    margin: auto;
+}
+
+
