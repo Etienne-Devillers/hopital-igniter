@@ -1,13 +1,13 @@
 <?php
 
 
-echo form_open('', 'id="patientForm"');
+
 $formData = array (
 [
     'name'          => 'firstname',
     'id'            => 'firstname',
     'placeholder'   => 'Renseignez votre prénom',
-    'value'         => '',
+    'value'         => set_value('firstname'),
     'class'         => 'inputField',
     'pattern'       => "^[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸ '-]*$"
 ],
@@ -15,7 +15,7 @@ $formData = array (
     'name'          => 'lastname',
     'id'            => 'lastname',
     'placeholder'   => 'Renseignez votre nom',
-    'value'         => '',
+    'value'         => set_value('lastname'),
     'class'         => 'inputField',
     'pattern'       => "^[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇÉÈÊËÎÏÔŒÙÛÜŸ '-]*$"
 ],
@@ -24,25 +24,25 @@ $formData = array (
     'type'          => 'date',
     'id'            => 'birthdate',
     'placeholder'   => '',
-    'value'         => '',
+    'value'         => set_value('birthdate'),
     'class'         => 'inputField',
     'min'           => date("Y-m-d", strtotime("-100 year")),
     'max'           => date('Y-m-d')
 ],
 [ 
-    'name'          => 'phonenumber',
+    'name'          => 'phone',
     'type'          => 'tel',
-    'id'            => 'phonenumber',
+    'id'            => 'phone',
     'placeholder'   => 'Renseignez votre numéro',
-    'value'         => '',
+    'value'         => set_value('phone'),
     'class'         => 'inputField'
 ],
 [
-    'name'          => 'email',
+    'name'          => 'mail',
     'type'          => 'email',
     'placeholder'   => 'Renseignez votre email',
     'id'            => 'email',
-    'value'         => '',
+    'value'         => set_value('mail'),
     'class'         => 'inputField'
 ]);
 
@@ -60,16 +60,16 @@ $labelValue[2]->labelFor = 'birthdate ';
 $labelValue[2]->text = 'Date de naissance';
 
 $labelValue[3]= new stdClass();
-$labelValue[3]->labelFor = 'phonenumber';
+$labelValue[3]->labelFor = 'phone';
 $labelValue[3]->text = 'N° de téléphone';
 
 $labelValue[4]= new stdClass();
-$labelValue[4]->labelFor = 'email';
+$labelValue[4]->labelFor = 'mail';
 $labelValue[4]->text = 'E-mail';
 
-
+echo form_open('', 'id="patientForm" no-validate');
 ?>
-
+<section class="contentSection">
 <h1 class="mainTitle">Ajout d'un patient</h1>
 
 
@@ -82,11 +82,16 @@ for ($i=0; $i < count($formData); $i++) {
         <?= form_input($formData[$i], '', 'required')?>
         <span class="focusBorder"></span>
     </div>
-
+        <?=form_error($labelValue[$i]->labelFor, '<div class="errorDiv">', '</div>')?>
 <?php } ?>
 
-<div class="inputDiv">
-    <?= form_submit('validationBtn','Envoyer', 'class="validationBtn"')?>
-</div>
-<?= form_close()?>
 
+    <div class="btnContainer">
+        <span class="btnEffectSpan">
+        <?= form_submit('','Ajouter', 'class="validationBtn"')?>
+
+        </span>
+    </div>
+
+<?= form_close()?>
+</section>

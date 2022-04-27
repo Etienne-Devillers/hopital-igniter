@@ -88,7 +88,7 @@ footer {
 
 .mainTitle {
 	margin-top: 0;
-    margin-bottom: 0;
+	margin-bottom: 0;
 	text-align: center;
 	font-size: 48px;
 }
@@ -129,51 +129,114 @@ footer {
 .inputField {
 	height: 35px;
 	width: 100%;
-	border-radius: 5px;
+	/* border-radius: 5px; */
 	padding: 0;
 }
 
-.validationBtn {
-	margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 13px 18px;
-    background-color: rgb(93, 222, 70);
-    border-radius: 5px;
-    cursor: pointer;
-    border: solid 1px black;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 40px white inset !important;
+
 }
 
-.inputDiv{
-    width: 60%;
-    margin: auto;
-    margin-top: 20px;
-    position: relative
+
+.validationBtn {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 13px 18px;
+	background-color: rgb(93, 222, 70);
+	cursor: pointer;
+	width: 90%;
+	border: solid 1px black;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	position: relative;
+}
+
+.btnContainer {
+	position: relative;
+	margin: auto;
+	width: 20%;
+}
+
+.btnEffectSpan {
+	position: relative;
+}
+
+.btnEffectSpan::before {
+	content: '';
+	z-index: 10;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: -14px;
+	left: -7px;
+	border-top: 3px solid transparent;
+	border-left: 3px solid transparent;
+	transition: 0.5s;
+}
+
+.btnEffectSpan::after {
+	content: '';
+	z-index: 10;
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: -21px;
+	right: -7px;
+	border-right: 3px solid transparent;
+	border-bottom: 3px solid transparent;
+	transition: 0.3s;
+}
+
+.btnEffectSpan:hover::after,
+.btnEffectSpan:hover::before,
+.btnEffectSpan:focus-within::after,
+.btnEffectSpan:focus-within::before {
+	width: 35px;
+	height: 35px;
+	border-color: #3399FF;
+}
+
+.inputDiv {
+	width: 60%;
+	margin: auto;
+	margin-top: 20px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.errorDiv {
+	width: 60%;
+	color: red;
+	margin: auto;
 }
 
 .inputField {
 	border: 0;
-    width: 90%;
+	width: 90%;
 	padding: 5px 3px 5px;
 	border: 1px solid transparent;
 	border-bottom-color: #ccc;
 	transition: 0.3s;
 }
 
-.inputField::placeholder{
-    font-size: 15px;
+.inputField::placeholder {
+	font-size: 15px;
 }
 
 .inputField:focus {
 	padding: 5px 14px 5px;
 	transition: 0.3s;
-    outline: none;
+	outline: none;
 }
 
 .inputField~.focusBorder {
 	position: absolute;
-    padding: 5px 14px 5px;
-	height: 36px;
+	padding: 5px 14px 5px;
+	height: 35px;
 	bottom: 0;
 	left: 0;
 	width: 0;
@@ -183,6 +246,40 @@ footer {
 .inputField:focus~.focusBorder {
 	width: 90%;
 	transition: 0.3s;
-    border-radius: 5px;
+	border-radius: 5px;
 	border: 2px solid #3399FF;
+}
+
+/********************************************** TABLE **********************************************/
+
+.patientsTable {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	margin-top: 20px;
+
+}
+
+.patientsTable td,
+.patientsTable th {
+	padding-left: 15px;
+	height: 35px;
+}
+
+.patientsTable thead {
+	background-color: #4ECDC4;
+}
+
+.patientsTable td {
+	border-left: solid 1px #ECF0F1;
+	border-right: solid 1px #ECF0F1;
+}
+
+.patientsTable tr:nth-of-type(even) {
+	background-color: #4ecdc556;
+}
+
+.patientsTable tr:hover{
+	background-color: rgba(154, 150, 150, 0.148);
+	cursor: pointer;
 }
