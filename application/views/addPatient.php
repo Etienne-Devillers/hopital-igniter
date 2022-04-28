@@ -67,7 +67,7 @@ $labelValue[4]= new stdClass();
 $labelValue[4]->labelFor = 'mail';
 $labelValue[4]->text = 'E-mail';
 
-echo form_open('', 'id="patientForm" no-validate');
+echo form_open('', 'id="patientForm"');
 ?>
 <section class="contentSection">
 <h1 class="mainTitle">Ajout d'un patient</h1>

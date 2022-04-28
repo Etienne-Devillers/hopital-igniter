@@ -7,7 +7,8 @@ body {
 	font-family: 'Oswald', sans-serif;
 
 }
-a{
+
+a {
 	color: inherit;
 	text-decoration: none;
 }
@@ -118,10 +119,11 @@ footer {
 	margin: auto;
 }
 
-.error{
+.error {
 	color: red;
 	font-size: 24px;
 }
+
 /********************************************** form **********************************************/
 
 #patientForm {
@@ -286,7 +288,8 @@ input:-webkit-autofill:active {
 .patientsTable tr:nth-of-type(even) {
 	background-color: #4ecdc556;
 }
-.patientsTable tr:last-child{
+
+.patientsTable tr:last-child {
 	border-bottom: solid 1px #ECF0F1;
 }
 
@@ -297,15 +300,15 @@ input:-webkit-autofill:active {
 
 /********************************************** patientProfil **********************************************/
 
-.patientProfil{
+.patientProfil {
 	margin: 20px auto;
 	width: 90%;
 	height: 500px;
-	
+
 	display: flex;
 }
 
-.leftSideProfil{
+.leftSideProfil {
 	height: 100%;
 	width: 50%;
 	background-color: grey;
@@ -314,27 +317,109 @@ input:-webkit-autofill:active {
 	flex-direction: column;
 }
 
-.patientImg{
+.patientImg {
 	margin: 15px auto;
 }
-.userImg{
+
+.userImg {
 	width: 100px;
-	
+
 }
 
-.patientName{
-	font-size:48px;
+.patientName {
+	font-size: 48px;
 	font-weight: bold;
 	margin: 0 auto;
 }
 
-.profilInfoImg{
+.profilInfoImg {
 	width: 40px;
+	margin-right: 15px;
 }
-.rightSideProfil{
+
+.patientInfoBottom {
+	margin-left: 10px;
+	margin-top: 32px;
+	font-size: 32px;
+	display: flex;
+	align-items: center;
+}
+
+.rightSideProfil {
 	height: 100%;
 	width: 50%;
 	background-color: green;
 }
 
 
+/********************************************** AppointmentForm **********************************************/
+
+
+#appointmentForm {
+	display: flex;
+	flex-direction: column;
+}
+
+.hoursMinutesDiv{
+	display: flex;
+	flex-direction: row;
+}
+
+#appointmentForm select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 0 !important;
+	background: #5c6664;
+	background-image: none;
+	flex: 1;
+	padding: 0 .5em;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1em;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#appointmentForm select::-ms-expand {
+	display: none;
+}
+
+#appointmentForm .select {
+	position: relative;
+	display: flex;
+	margin: auto;
+	height: 3em;
+	line-height: 3;
+	background: #5c6664;
+	overflow: hidden;
+	border-radius: .25em;
+}
+
+#appointmentForm .select::after {
+	content: '\25BC';
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 1em;
+	background: #2b2e2e;
+	cursor: pointer;
+	pointer-events: none;
+	transition: .25s all ease;
+}
+
+#appointmentForm .select:hover::after {
+	color: #23b499;
+}
+#patientField .select{
+	width: 50%;
+}
+#hoursField, #minutesField{
+	width: 100px;
+	
+}
+#hoursField option{
+	font-size: 24px;
+}

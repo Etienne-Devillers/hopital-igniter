@@ -49,7 +49,8 @@ class Patient extends CI_Controller {
 	public function profil() {
 
 
-		$id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+
+		$id = intval($this->input->get('id'));
 
 		$data['patient'] = $this->Patient_Model->get($id);
 
@@ -63,11 +64,14 @@ class Patient extends CI_Controller {
 
 		} else {
 			
-
+			$currentDate = date('Y-m-d');
+			$diff = date_diff(date_create($data['patient']['birthdate']), date_create($currentDate));
+			$data['age']= $diff->format('%Y');
+			$this->load->view('templates/header');
+			$this->load->view('profilPatient', $data);
+			$this->load->view('templates/footer');
 		}
 
-		$this->load->view('templates/header');
-		$this->load->view('profilPatient', $data);
-		$this->load->view('templates/footer');
+
 	}
 }

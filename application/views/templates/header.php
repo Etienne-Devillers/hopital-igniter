@@ -21,7 +21,7 @@
     <div class="navBar">
         <a href="<?php echo site_url('/Patient/add'); ?>"><div class="navItem navItm1">Ajouter un patient <img class="svgImg" src="<?=img_url('user-plus-solid.svg')?>" alt=""></div></a>
         <a href="<?php echo site_url('/Patient/list'); ?>"><div class="navItem navItm2">liste des patients <img class="svgImg" src="<?=img_url('users-solid.svg')?>" alt=""></div></a>
-        <a href=""><div class="navItem navItm3">Ajouter un RDV <img class="svgImg" src="<?=img_url('calendar-plus-solid.svg')?>" alt=""></div></a>
+        <a href="<?php echo site_url('/Appointment/add'); ?>"><div class="navItem navItm3">Ajouter un RDV <img class="svgImg" src="<?=img_url('calendar-plus-solid.svg')?>" alt=""></div></a>
         <a href=""><div class="navItem navItm4">liste des RDV <img class="svgImg" src="<?=img_url('calendar-days-solid.svg')?>" alt=""></div></a>
     </div>
 <section id="mainSection">
