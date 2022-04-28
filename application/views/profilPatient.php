@@ -32,7 +32,19 @@
     </div>
 
     <div class="rightSideProfil">
-        <div></div>
+        <?php if ($appointments) { ?>
+
+            <div class=""> Liste des rendez vous </div>
+            <div></div>
+
+        <?php } else { ?>
+
+            <div>Aucun RDV</div>
+
+        <?php } ?>
+        
+
+        
     </div>
 
 </section>

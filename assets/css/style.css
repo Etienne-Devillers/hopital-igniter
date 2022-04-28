@@ -123,6 +123,10 @@ footer {
 	color: red;
 	font-size: 24px;
 }
+.message {
+	color: rgb(30, 255, 0);
+	font-size: 24px;
+}
 
 /********************************************** form **********************************************/
 
@@ -363,7 +367,10 @@ input:-webkit-autofill:active {
 .hoursMinutesDiv{
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	margin: auto;
 }
+
 
 #appointmentForm select {
 	-webkit-appearance: none;
@@ -418,8 +425,23 @@ input:-webkit-autofill:active {
 }
 #hoursField, #minutesField{
 	width: 100px;
-	
 }
-#hoursField option{
+
+#hoursField option, #minutesField option,
+#hoursField, #minutesField{
 	font-size: 24px;
+}
+
+.separator {
+	font-size: 48px;
+	margin: 0 10px;
+}
+
+.hoursMinutesDiv .select:first-child{
+	margin: 0 !important;
+	justify-content: flex-end;
+}
+.hoursMinutesDiv .select:last-child{
+	margin: 0 !important;
+	justify-content: flex-start;
 }

@@ -19,18 +19,18 @@
 	</thead>
 	<tbody>
         <?php 
-            for ($i=0; $i < 15; $i++) { ?>
+        for ($i=0; $i < 15; $i++) { ?>
 
-                    <tr class="tRow" id="<?=$patients[$i]['id']?>">
-                            <td><?=$patients[$i]['lastname']?></td>
-                            <td><?=$patients[$i]['firstname']?></td>
-                            <td><?=$patients[$i]['birthdate']?></td>
-                            <td><?=$patients[$i]['phone']?></td>
-                            <td><?=$patients[$i]['mail']?></td>
-                        </tr>
+                <tr class="tRow" id="<?=$patients[$i]['id']?>">
+                        <td><?=$patients[$i]['lastname']?></td>
+                        <td><?=$patients[$i]['firstname']?></td>
+                        <td><?=$patients[$i]['birthdate']?></td>
+                        <td><?=$patients[$i]['phone']?></td>
+                        <td><?=$patients[$i]['mail']?></td>
+                </tr>
 
-            <?php }
-        ?>
+<?php } ?>
+        
 
 
 	</tbody>

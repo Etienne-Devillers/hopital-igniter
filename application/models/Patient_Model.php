@@ -12,14 +12,14 @@ class Patient_Model extends CI_Model {
     }
     
 
-    public function get($slug = FALSE){
+    public function get($id = FALSE){
         
-        if ($slug === FALSE){
+        if ($id === FALSE){
             $query = $this->db->get('patients');
             return $query->result_array();
         }
 
-        $query = $this->db->get_where('patients', array('id' => $slug));
+        $query = $this->db->get_where('patients', array('id' => $id));
         return $query->row_array();
 
         }

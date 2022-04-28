@@ -7,6 +7,7 @@ class Patient extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model('Patient_Model');
+		$this->load->model('Appointment_Model');
 
 	}
 
@@ -53,7 +54,7 @@ class Patient extends CI_Controller {
 		$id = intval($this->input->get('id'));
 
 		$data['patient'] = $this->Patient_Model->get($id);
-
+		$data['appointments'] = $this->Appointment_Model->get($id);
 		if( empty($data['patient'])){
 
 			$data['patients'] = $this->Patient_Model->get();
