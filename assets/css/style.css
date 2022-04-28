@@ -7,6 +7,10 @@ body {
 	font-family: 'Oswald', sans-serif;
 
 }
+a{
+	color: inherit;
+	text-decoration: none;
+}
 
 main {
 	min-height: calc(100vh - 120px);
@@ -114,6 +118,10 @@ footer {
 	margin: auto;
 }
 
+.error{
+	color: red;
+	font-size: 24px;
+}
 /********************************************** form **********************************************/
 
 #patientForm {
@@ -257,7 +265,7 @@ input:-webkit-autofill:active {
 	border-collapse: collapse;
 	text-align: left;
 	margin-top: 20px;
-
+	margin-bottom: 20px;
 }
 
 .patientsTable td,
@@ -278,8 +286,55 @@ input:-webkit-autofill:active {
 .patientsTable tr:nth-of-type(even) {
 	background-color: #4ecdc556;
 }
+.patientsTable tr:last-child{
+	border-bottom: solid 1px #ECF0F1;
+}
 
-.patientsTable tr:hover{
+.patientsTable tr:hover {
 	background-color: rgba(154, 150, 150, 0.148);
 	cursor: pointer;
 }
+
+/********************************************** patientProfil **********************************************/
+
+.patientProfil{
+	margin: 20px auto;
+	width: 90%;
+	height: 500px;
+	
+	display: flex;
+}
+
+.leftSideProfil{
+	height: 100%;
+	width: 50%;
+	background-color: grey;
+	display: flex;
+
+	flex-direction: column;
+}
+
+.patientImg{
+	margin: 15px auto;
+}
+.userImg{
+	width: 100px;
+	
+}
+
+.patientName{
+	font-size:48px;
+	font-weight: bold;
+	margin: 0 auto;
+}
+
+.profilInfoImg{
+	width: 40px;
+}
+.rightSideProfil{
+	height: 100%;
+	width: 50%;
+	background-color: green;
+}
+
+

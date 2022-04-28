@@ -4,7 +4,7 @@
 
 ?>
 <h1 class="mainTitle">Liste des patients</h1>
-
+<h4 class="error"><?= $error ?? ''?></h4>
 <table class="patientsTable">
 	<thead>
 		<tr>
@@ -21,7 +21,7 @@
         <?php 
             for ($i=0; $i < 15; $i++) { ?>
 
-                        <tr>
+                    <tr class="tRow" id="<?=$patients[$i]['id']?>">
                             <td><?=$patients[$i]['lastname']?></td>
                             <td><?=$patients[$i]['firstname']?></td>
                             <td><?=$patients[$i]['birthdate']?></td>

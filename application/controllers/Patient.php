@@ -44,4 +44,30 @@ class Patient extends CI_Controller {
 		$this->load->view('templates/footer');
 
 	}
+
+
+	public function profil() {
+
+
+		$id = intval(filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT));
+
+		$data['patient'] = $this->Patient_Model->get($id);
+
+		if( empty($data['patient'])){
+
+			$data['patients'] = $this->Patient_Model->get();
+			$data['error'] = 'Une erreur est survenue lors de l\'affichage du patient.';
+			$this->load->view('templates/header');
+			$this->load->view('listPatient', $data);
+			$this->load->view('templates/footer');
+
+		} else {
+			
+
+		}
+
+		$this->load->view('templates/header');
+		$this->load->view('profilPatient', $data);
+		$this->load->view('templates/footer');
+	}
 }
